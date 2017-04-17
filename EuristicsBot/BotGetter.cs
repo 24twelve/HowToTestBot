@@ -30,7 +30,7 @@ namespace EuristicsBot
 		private static async void BotOnMessageReceived(object sender, MessageEventArgs messageEventArgs)
 		{
 			var message = messageEventArgs.Message;
-			Logger.Log.Info($"Recieved: {message}");
+			Logger.Log.Info($"Recieved: {message.Text}");
 			if (message == null || message.Type != MessageType.TextMessage) return;
 
 			if (message.Text.ToLower().Contains("как") && message.Text.ToLower().Contains("тест"))
