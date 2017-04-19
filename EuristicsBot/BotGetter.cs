@@ -41,7 +41,8 @@ namespace EuristicsBot
 			else
 			{
 				await Bot.SendTextMessageAsync(message.Chat.Id,
-					"Если нет идей, как протестировать приложение — спроси меня, \"Как протестировать %имя релиза%?\". Пуллреквесты можно слать в https://github.com/24twelve/HowToTestBot.");
+					"Если нет идей, как протестировать приложение — спроси меня, \"Как протестировать %имя релиза%?\". Пуллреквесты можно слать в https://github.com/24twelve/HowToTestBot.",
+					disableWebPagePreview: true);
 				//todo buttons
 			}
 		}
