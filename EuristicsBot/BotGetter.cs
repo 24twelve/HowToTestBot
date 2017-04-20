@@ -1,4 +1,5 @@
-﻿using Telegram.Bot;
+﻿using System;
+using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types.Enums;
 
@@ -27,13 +28,14 @@ namespace EuristicsBot
 		private static async void BotOnMessageReceived(object sender, MessageEventArgs messageEventArgs)
 		{
 			var message = messageEventArgs.Message;
-			Logger.Log.Info($"Recieved: {message.Text}");
+			var id = Guid.NewGuid().ToString().Substring(0, 5);
+			Logger.Log.Info($"[{id}] Recieved: {message.Text}");
 			if (message == null || message.Type != MessageType.TextMessage) return;
-
+			var nextEuristic = EuristicGetter.GetRandomEuristic();
 			if (message.Text.StartsWith("/howtotest") ||
 			    message.Text.ToLower().Contains("как") && message.Text.ToLower().Contains("тест"))
 			{
-				var nextEuristic = EuristicGetter.GetRandomEuristic();
+				Logger.Log.Info($"[{id}] Answered: {nextEuristic}");
 				await Bot.SendTextMessageAsync(message.Chat.Id, nextEuristic);
 			}
 			else
@@ -42,6 +44,7 @@ namespace EuristicsBot
 					"Спроси меня: \"Как тестировать <подставь название>?\".\r\n\r\nПуллреквесты можно слать в https://github.com/24twelve/HowToTestBot.",
 					disableWebPagePreview: true);
 			}
+			
 		}
 	}
 }
