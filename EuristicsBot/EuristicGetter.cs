@@ -10,7 +10,7 @@ namespace EuristicsBot
 
 		public static string GetRandomEuristic()
 		{
-			return Euristics[Rand.Next(0, Euristics.Count)];
+			return Euristics[Rand.Next(0, Euristics.Count-1)];
 		}
 	}
 }
