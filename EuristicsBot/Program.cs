@@ -7,14 +7,6 @@ namespace EuristicsBot
 {
 	class Program
 	{
-		//todo: external hosting and deploy and subscription+
-		//todo: inline queries
-		//todo: better hide api key
-		//todo: tests and proper architecture 
-		//todo: fill with euristics
-		//todo: user friendlyness and ux
-		//todo: remove memory leaks without restarting
-
 		static void Main(string[] args)
 		{
 			Logger.InitLogger();
