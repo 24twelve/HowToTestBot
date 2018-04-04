@@ -299,7 +299,6 @@ namespace EuristicsBot
             new TitlePart("Visioner", WordPlaceSpecificator.OnlyOnEnd),
             new TitlePart("Process Improvement", WordPlaceSpecificator.Anywhere),
             new TitlePart("Random", WordPlaceSpecificator.Anywhere),
-            new TitlePart("Test title", WordPlaceSpecificator.Anywhere),
             new TitlePart("Reliability", WordPlaceSpecificator.Anywhere),
             new TitlePart("Robust", WordPlaceSpecificator.Anywhere),
             new TitlePart("Result-oriented", WordPlaceSpecificator.Anywhere),
