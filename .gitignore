@@ -4,3 +4,7 @@ apiKey
 packages/*
 */obj/*
 *.suo
+/.vs/EuristicsBot/v15/Server/sqlite3/db.lock
+/.vs/EuristicsBot/v15/Server/sqlite3/storage.ide
+/.vs/EuristicsBot/v15/Server/sqlite3/storage.ide-shm
+/.vs/EuristicsBot/v15/Server/sqlite3/storage.ide-wal
