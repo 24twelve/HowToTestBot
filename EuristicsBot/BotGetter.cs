@@ -34,7 +34,7 @@ namespace EuristicsBot
 
             if (message.Text.ToLowerInvariant().Contains("кто") && message.Text.ToLowerInvariant().Contains("я"))
             {
-                var newJobTitle = JobTitleGetter.GetRandomJobTitle(3);
+                var newJobTitle = JobTitleGetter.GetRandomJobTitle();
                 Logger.Log.Info($"[{id}] Answered: {newJobTitle}");
                 await Bot.SendTextMessageAsync(message.Chat.Id, $"Сегодня ты: {newJobTitle}.");
             }

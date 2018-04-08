@@ -11,7 +11,7 @@ namespace EuristicsBot
         [Test]
         public void JobTitleGetter_GeneratesSomething()
         {
-            var randomJobTitle = JobTitleGetter.GetRandomJobTitle(6);
+            var randomJobTitle = JobTitleGetter.GetRandomJobTitle();
             randomJobTitle.Should().NotBe("");
         }
 
@@ -20,7 +20,7 @@ namespace EuristicsBot
         public void GenerateManyToShow()
         {
             for (var i = 0; i < 1000; i++)
-                Console.WriteLine(JobTitleGetter.GetRandomJobTitle(3));
+                Console.WriteLine(JobTitleGetter.GetRandomJobTitle());
         }
     }
 }

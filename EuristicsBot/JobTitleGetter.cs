@@ -11,20 +11,14 @@ namespace EuristicsBot
 {
     public static class JobTitleGetter
     {
-        //todo: пасхалки <0, очень большое число
-        //todo: logging
-        //todo: прикрутить к командам бота
-        //todo: типа - кем хочешь быть сегодня
-
-        public static string GetRandomJobTitle(int wordCount)
+        public static string GetRandomJobTitle()
         {
-            if (wordCount > Words.Length)
-                wordCount = Words.Length;
-            return GetRandomJobTitleInternal(wordCount, Words);
+            return GetRandomJobTitleInternal(Words);
         }
 
-        private static string GetRandomJobTitleInternal(int wordCount, TitlePart[] wordArray)
+        private static string GetRandomJobTitleInternal(TitlePart[] wordArray)
         {
+            var wordCount = Random.Next(0, 4);
             var result = new List<TitlePart>();
             while (result.Count <= wordCount)
             {
@@ -109,10 +103,13 @@ namespace EuristicsBot
             },
             new[]
             {
-                new TitlePart("Specialist", WordPlaceSpecificator.Anywhere),
+                new TitlePart("Specialist", WordPlaceSpecificator.OnlyOnEnd),
                 new TitlePart("Tester", WordPlaceSpecificator.OnlyOnEnd),
-                new TitlePart("Engineer", WordPlaceSpecificator.Anywhere),
-                new TitlePart("Developer", WordPlaceSpecificator.Anywhere),
+                new TitlePart("Engineer", WordPlaceSpecificator.OnlyOnEnd),
+                new TitlePart("Developer", WordPlaceSpecificator.OnlyOnEnd),
+                new TitlePart("Scientist", WordPlaceSpecificator.OnlyOnEnd),
+                new TitlePart("Auditor", WordPlaceSpecificator.OnlyOnEnd),
+                new TitlePart("Master", WordPlaceSpecificator.OnlyOnEnd),
             },
             new[]
             {
@@ -147,8 +144,9 @@ namespace EuristicsBot
             },
             new[]
             {
-                new TitlePart("Auditor", WordPlaceSpecificator.OnlyOnEnd),
-                new TitlePart("Master", WordPlaceSpecificator.NotOnEnd),
+                new TitlePart("Kanban", WordPlaceSpecificator.NotOnEnd),
+                new TitlePart("Agile", WordPlaceSpecificator.NotOnEnd),
+                new TitlePart("Scrum", WordPlaceSpecificator.NotOnEnd),
             }
         };
 
@@ -191,7 +189,9 @@ namespace EuristicsBot
             new TitlePart("Automation", WordPlaceSpecificator.NotOnEnd),
             new TitlePart("Automation", WordPlaceSpecificator.NotOnEnd),
             new TitlePart("Scrum", WordPlaceSpecificator.NotOnEnd),
+            new TitlePart("Kanban", WordPlaceSpecificator.NotOnEnd),
             new TitlePart("Analyst", WordPlaceSpecificator.OnlyOnEnd),
+            new TitlePart("Scientist", WordPlaceSpecificator.OnlyOnEnd),
             new TitlePart("Developer", WordPlaceSpecificator.OnlyOnEnd),
             new TitlePart("Devops", WordPlaceSpecificator.NotOnEnd),
             new TitlePart("Frontend", WordPlaceSpecificator.NotOnEnd),
@@ -310,11 +310,13 @@ namespace EuristicsBot
             new TitlePart("XML", WordPlaceSpecificator.Anywhere),
             new TitlePart("HTML", WordPlaceSpecificator.Anywhere),
             new TitlePart("Erlang", WordPlaceSpecificator.Anywhere),
-            new TitlePart("Elixir", WordPlaceSpecificator.Anywhere),
             new TitlePart("Java", WordPlaceSpecificator.Anywhere),
             new TitlePart("Javascript", WordPlaceSpecificator.Anywhere),
             new TitlePart("1C", WordPlaceSpecificator.Anywhere),
             new TitlePart("Haskell", WordPlaceSpecificator.Anywhere),
+            new TitlePart("Data science", WordPlaceSpecificator.Anywhere),
+            new TitlePart("Tech", WordPlaceSpecificator.Anywhere),
+            new TitlePart("Markup", WordPlaceSpecificator.Anywhere),
         };
 
         private static readonly Random Random = new Random();
