@@ -38,20 +38,38 @@ namespace EuristicsBot
                 Logger.Log.Info($"[{id}] Answered: {newJobTitle}");
                 await Bot.SendTextMessageAsync(message.Chat.Id, $"Сегодня ты: {newJobTitle}.");
             }
-            else if (message.Text.StartsWith("/howtotest") ||
-                     message.Text.ToLowerInvariant().Contains("как") &&
-                     message.Text.ToLowerInvariant().Contains("тест"))
+            else if (message.Text.StartsWith("/idea") ||
+                     message.Text.ToLowerInvariant().Contains("идея"))
             {
                 var nextEuristic = EuristicGetter.GetRandomEuristic();
                 Logger.Log.Info($"[{id}] Answered: {nextEuristic}");
                 await Bot.SendTextMessageAsync(message.Chat.Id, nextEuristic);
             }
+            else if (message.Text.StartsWith("/howtotestall") ||
+                     message.Text.ToLowerInvariant().Contains("как") &&
+                     message.Text.ToLowerInvariant().Contains("тестировать") &&
+                     message.Text.ToLowerInvariant().Contains("все"))
+            {
+                var nextEuristic = EuristicGetter.GetRandomEuristic();
+                Logger.Log.Info($"[{id}] Answered: {nextEuristic}");
+                await Bot.SendTextMessageAsync(message.Chat.Id, nextEuristic);
+            }
+            else if (message.Text.StartsWith("/howtotestfields") ||
+                     message.Text.ToLowerInvariant().Contains("как") &&
+                     message.Text.ToLowerInvariant().Contains("тестировать") &&
+                     message.Text.ToLowerInvariant().Contains("поля"))
+            {
+                var nextEuristicFields = EuristicGetterFields.GetRandomEuristicFields();
+                Logger.Log.Info($"[{id}] Answered: {nextEuristicFields}");
+                await Bot.SendTextMessageAsync(message.Chat.Id, nextEuristicFields);
+            }
             else
             {
                 await Bot.SendTextMessageAsync(message.Chat.Id,
                     "Привет. Я умею:\r\n " +
-                    "1.Отвечать на вопрос: \"Как тестировать <подставь сюда что угодно>. \r\n" +
-                    "2.Придумать должности для визиток. Спроси меня: \"Кто я сегодня?\"" +
+                    "1. Отвечать на вопрос: \"Как тестировать <все> или <поля ввода>? \r\n" +
+                    "2. Придумывать должности для визиток. Спроси меня: \"Кто я сегодня? \r\n" +
+                    "3. Придумывать идеи для тестирования, просто введи слово \"идея\"." +
                     "\r\n\r\nПуллреквесты можно слать в https://github.com/24twelve/HowToTestBot.",
                     disableWebPagePreview: true);
             }

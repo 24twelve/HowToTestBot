@@ -29,12 +29,17 @@ namespace EuristicsBot
 		public static void Init()
 		{
 			apiKey = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "apiKey"));
-			var euristics = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Euristics.txt"));
-			foreach (var euristic in euristics)
-			{
-				EuristicGetter.Euristics.Add(euristic);
-			}
-			var bot = BotGetter.GetBot(apiKey);
+            var euristics = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Euristics_common.txt"));
+            foreach (var euristic in euristics)
+            {
+                EuristicGetter.Euristics.Add(euristic);
+            }
+            var euristicsFields = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Euristics_fields.txt"));
+            foreach (var euristicFields in euristics)
+            {
+                EuristicGetterFields.EuristicsFields.Add(euristicFields);
+            }
+            var bot = BotGetter.GetBot(apiKey);
 			bot.StartReceiving();
 		}
 
