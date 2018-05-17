@@ -8,8 +8,9 @@ namespace EuristicsBot
     public static class BotGetter
     {
         public static TelegramBotClient Bot;
+        private static string apiKey = "586408269:AAEUBwecgTFiBaYgWjsjy83sIcRyttY-tNA";
 
-        public static TelegramBotClient GetBot(string apiKey)
+        public static TelegramBotClient GetBot()
         {
             Bot = new TelegramBotClient(apiKey);
             Bot.OnMessage += BotOnMessageReceived;
