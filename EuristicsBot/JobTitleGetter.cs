@@ -37,6 +37,7 @@ namespace EuristicsBot
                 result.Add(suitable);
                 result.Remove(suitable);
             }
+
             result.RemoveAll(x => x.Specificator == WordPlaceSpecificator.OnlyOnEnd);
             result.Add(GetRandomTitlePart(wordArray, x => x.Specificator == WordPlaceSpecificator.OnlyOnEnd));
 
@@ -72,6 +73,7 @@ namespace EuristicsBot
                     newArray = newArray.Where(x => !newSubset.Contains(x)).ToArray();
                 }
             }
+
             return newArray;
         }
 
@@ -106,6 +108,7 @@ namespace EuristicsBot
                 new TitlePart("Specialist", WordPlaceSpecificator.OnlyOnEnd),
                 new TitlePart("Tester", WordPlaceSpecificator.OnlyOnEnd),
                 new TitlePart("Engineer", WordPlaceSpecificator.OnlyOnEnd),
+                new TitlePart("Over-Engineer", WordPlaceSpecificator.OnlyOnEnd),
                 new TitlePart("Developer", WordPlaceSpecificator.OnlyOnEnd),
                 new TitlePart("Scientist", WordPlaceSpecificator.OnlyOnEnd),
                 new TitlePart("Auditor", WordPlaceSpecificator.OnlyOnEnd),
@@ -126,6 +129,9 @@ namespace EuristicsBot
             new[]
             {
                 new TitlePart("C#", WordPlaceSpecificator.Anywhere),
+                new TitlePart("C++", WordPlaceSpecificator.Anywhere),
+                new TitlePart("C", WordPlaceSpecificator.Anywhere),
+                new TitlePart("Assembly", WordPlaceSpecificator.Anywhere),
                 new TitlePart("Python", WordPlaceSpecificator.Anywhere),
                 new TitlePart("XML", WordPlaceSpecificator.Anywhere),
                 new TitlePart("HTML", WordPlaceSpecificator.Anywhere),
@@ -232,6 +238,7 @@ namespace EuristicsBot
             new TitlePart("Experienced", WordPlaceSpecificator.NotOnEnd),
             new TitlePart("Extreme", WordPlaceSpecificator.NotOnEnd),
             new TitlePart("Functional", WordPlaceSpecificator.NotOnEnd),
+            new TitlePart("Over-Engineer", WordPlaceSpecificator.OnlyOnEnd),
             new TitlePart("Engineer", WordPlaceSpecificator.OnlyOnEnd),
             new TitlePart("Star", WordPlaceSpecificator.NotOnEnd),
             new TitlePart("Senior", WordPlaceSpecificator.NotOnEnd),
@@ -317,6 +324,9 @@ namespace EuristicsBot
             new TitlePart("Data science", WordPlaceSpecificator.Anywhere),
             new TitlePart("Tech", WordPlaceSpecificator.Anywhere),
             new TitlePart("Markup", WordPlaceSpecificator.Anywhere),
+            new TitlePart("C++", WordPlaceSpecificator.Anywhere),
+            new TitlePart("C", WordPlaceSpecificator.Anywhere),
+            new TitlePart("Assembly", WordPlaceSpecificator.Anywhere),
         };
 
         private static readonly Random Random = new Random();
