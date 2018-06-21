@@ -113,6 +113,10 @@ namespace EuristicsBot
                 new TitlePart("Scientist", WordPlaceSpecificator.OnlyOnEnd),
                 new TitlePart("Auditor", WordPlaceSpecificator.OnlyOnEnd),
                 new TitlePart("Master", WordPlaceSpecificator.OnlyOnEnd),
+                new TitlePart("Champion", WordPlaceSpecificator.OnlyOnEnd),
+                new TitlePart("Evangelist", WordPlaceSpecificator.OnlyOnEnd),
+                new TitlePart("Tutor", WordPlaceSpecificator.OnlyOnEnd),
+                new TitlePart("Mentor", WordPlaceSpecificator.OnlyOnEnd),
             },
             new[]
             {
@@ -160,6 +164,8 @@ namespace EuristicsBot
         {
             new TitlePart("QA", WordPlaceSpecificator.NotOnEnd),
             new TitlePart("Tester", WordPlaceSpecificator.OnlyOnEnd),
+            new TitlePart("Champion", WordPlaceSpecificator.OnlyOnEnd),
+            new TitlePart("Evangelist", WordPlaceSpecificator.OnlyOnEnd),
             new TitlePart("Testing", WordPlaceSpecificator.NotOnEnd),
             new TitlePart("Coach", WordPlaceSpecificator.OnlyOnEnd),
             new TitlePart("Ad hoc", WordPlaceSpecificator.NotOnEnd),
